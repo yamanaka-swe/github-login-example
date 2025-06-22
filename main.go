@@ -10,6 +10,7 @@ import (
 	"os"
 
 	"github.com/gorilla/sessions"
+	"github.com/joho/godotenv"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/github"
 )
@@ -28,6 +29,10 @@ type GitHubUser struct {
 }
 
 func init() {
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found, using system environment variables")
+	}
+
 	githubOauthConfig = &oauth2.Config{
 		ClientID:     os.Getenv("GITHUB_CLIENT_ID"),
 		ClientSecret: os.Getenv("GITHUB_CLIENT_SECRET"),
@@ -41,7 +46,7 @@ func init() {
 
 func main() {
 	if githubOauthConfig.ClientID == "" || githubOauthConfig.ClientSecret == "" {
-		log.Fatal("GitHub OAuth credentials not set. Please set GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET environment variables.")
+		log.Fatal("GitHub OAuth credentials not set. Please set GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET in .env file or environment variables.")
 	}
 
 	http.HandleFunc("/", homeHandler)

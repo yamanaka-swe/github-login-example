@@ -4,6 +4,7 @@ go 1.21
 
 require (
 	github.com/gorilla/sessions v1.2.2
+	github.com/joho/godotenv v1.5.1
 	golang.org/x/oauth2 v0.15.0
 )
 

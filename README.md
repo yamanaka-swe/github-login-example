@@ -15,10 +15,7 @@ A simple Go web application demonstrating GitHub OAuth authentication.
 2. **Set Environment Variables:**
    ```bash
    cp .env.example .env
-   # Edit .env with your actual values
-   export GITHUB_CLIENT_ID=your_client_id
-   export GITHUB_CLIENT_SECRET=your_client_secret
-   export SESSION_SECRET=your_random_secret
+   # Edit .env with your actual GitHub OAuth credentials
    ```
 
 3. **Install Dependencies:**
