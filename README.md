@@ -2,6 +2,12 @@
 
 A simple Go web application demonstrating GitHub OAuth authentication.
 
+## Demo
+
+![App Demo](docs/sample.gif)
+
+*The demo shows the complete OAuth flow: login with GitHub, user profile display, and logout functionality.*
+
 ## Setup
 
 1. **Create a GitHub OAuth App:**
